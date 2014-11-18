@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Stack;
 
 /**
+ * Represents a card 'Deck' that can deal its cards and shuffle itself.
  * Created by Zak on 11/17/14.
  */
 public class Deck {
@@ -18,8 +19,8 @@ public class Deck {
      * Constructs a new deck with 52 cards (no jokers, aces low). This deck is not shuffled, and the cards are in order.
      */
     public Deck() {
-        for (int suit = 1; suit <= Card.Suit.NUMBER_OF_SUITS; suit++) {
-            for (int value = Card.Value.ACE; value <= Card.Value.KING; value++) {
+        for (Suit suit : Suit.values()) {
+            for (Value value : Value.values()) {
                 deck.push(
                         new Card(value, suit)
                 );
@@ -28,9 +29,7 @@ public class Deck {
     }
 
     /**
-     * Shuffle returns no value, but results in the cards in the deck being randomly permuted. Please do not use
-     * library-provided “shuffle” operations to implement this function. You may use library provided random
-     * number generators in your solution if needed.
+     * Randomly permutes the cards in the deck.
      */
     public void shuffle(){
         Random rand = new Random();
@@ -47,11 +46,11 @@ public class Deck {
     /**
      * This function should return one card from the deck to the caller. Specifically, a call to shuffle followed by 52
      * calls to dealOneCard() should result in the caller being provided all 52 cards of the deck in a random
-     * order. If the caller then makes a 53rd call dealOneCard(), no card is dealt.
+     * order. If the caller then makes a 53rd call dealOneCard(), no card is dealt (and an exception is thrown).
      * @return a card from the top of the deck
      * @throws IllegalStateException when the deck is empty
      */
-    public Card dealOneCard() throws IllegalStateException{
+    public Card dealOneCard() throws IllegalStateException {
         if (deck != null && deck.size() !=0) {
             Card dealtCard = deck.pop();
             log.info("dealt card: " + dealtCard);
@@ -76,5 +75,22 @@ public class Deck {
      */
     public Stack<Card> getDeck() {
         return deck;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == null) return false;
+        if (other == this) return true;
+        if (!(other instanceof Deck)) return false;
+        Stack<Card> otherDeck = ((Deck) other).getDeck();
+
+        int i = 0;
+        for (Card otherCard : otherDeck){
+            Card thisCard = this.deck.get(i);
+            if (!thisCard.equals(otherCard))
+                return false; //at least one of the cards is not equal ot the other deck's card at the same position
+            i++;
+        }
+        return true;
     }
 }

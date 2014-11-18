@@ -11,6 +11,10 @@ public class Main {
         deck.shuffle();
         log.info("Shuffled the deck!");
         deck.dealAllCards();
-        deck.dealOneCard(); //deal one more card when deck is empty to see the exception
+        try {
+            deck.dealOneCard(); //deal one more card when deck is empty to see the exception
+        } catch (IllegalStateException e) {
+            log.error("Dealt a card when the deck is empty", e);
+        }
     }
 }
