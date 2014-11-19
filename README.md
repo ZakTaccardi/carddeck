@@ -7,3 +7,6 @@ This project must be built with Gradle. I recommend using IntelliJ.
 
 Use 'gradle run' to run the main method of this application.
 Use 'gradle test' to run the test methods of this application.
+
+
+To see the instructions of this assignment, check out the PDF named 'DeckOfCardsAssignmentInstructions.pdf'
