@@ -12,7 +12,7 @@ public class CardTest {
      * @throws Exception
      */
     @Test
-    public void testComparator() throws Exception {
+    public void testComparable() throws Exception {
         assert(CompleteDeck.jackOfClubs.compareTo(CompleteDeck.deuceOfClubs) > 0);
         assert(CompleteDeck.jackOfClubs.compareTo(CompleteDeck.tenOfHearts) > 0);
         assert(CompleteDeck.jackOfClubs.compareTo(CompleteDeck.tenOfSpades) > 0);
