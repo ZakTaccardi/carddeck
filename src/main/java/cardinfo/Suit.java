@@ -1,11 +1,13 @@
+package cardinfo;
+
 /**
  * Created by zak on 11/18/14.
  */
 public enum Suit {
-    HEARTS("Hearts"),
-    CLUBS("Clubs"),
     SPADES("Spades"),
-    DIAMONDS("Diamonds");
+    HEARTS("Hearts"),
+    DIAMONDS("Diamonds"),
+    CLUBS("Clubs");
 
     private final String mText;
 

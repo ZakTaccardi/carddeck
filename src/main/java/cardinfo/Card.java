@@ -1,4 +1,7 @@
+package cardinfo;
+
 import java.lang.String;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,8 +40,8 @@ public class Card implements Comparable<Card>  {
     }
 
     /**
-     * In case you want to get the name of a card in a non-static context. Called by Card.java's toString() method
-     * @param card the Card object you want to get a string name for
+     * In case you want to get the name of a card in a non-static context. Called by cardinfo.Card.java's toString() method
+     * @param card the cardinfo.Card object you want to get a string name for
      * @return ex: 'Jack of Clubs'
      */
     private String getName(Card card){

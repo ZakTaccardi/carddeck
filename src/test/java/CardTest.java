@@ -1,8 +1,9 @@
+import customdecks.CompleteDeck;
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Test class for the Card class.
+ * Test class for the cardinfo.Card class.
  * Created by zak on 11/18/14.
  */
 public class CardTest {
