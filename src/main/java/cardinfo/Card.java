@@ -4,6 +4,7 @@ import java.lang.String;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 /**
  * Created by zak on 11/17/14.
@@ -85,5 +86,13 @@ public class Card implements Comparable<Card>  {
             return true;
         else
             return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 31). // two randomly chosen prime numbers
+                append(mSuit).
+                append(mValue).
+                toHashCode();
     }
 }
