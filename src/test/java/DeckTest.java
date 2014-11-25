@@ -166,7 +166,7 @@ public class DeckTest {
          * So, the top card of a fresh deck will be the last declared enum field for both suit/value enums
          *
          * Note: the associated test method relies on how the deck is logically created, which is an inherent flaw.
-         * A better approach to this would be to implement a sort functionality to sort the whole deck, and
+         * A better approach to this would be to implement a comparator to sort the whole deck, and
          * draw the top card from the sorted deck
          */
         final Value value = Value.class.getEnumConstants()[mValueSize-1];
